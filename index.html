@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- page1 intrudction -->
+   
+    <section class="page" id="page1">
+        <div class="intro">
+            <h1>commencer la réservation</h1>
+            <p>
+                la réservation d'un voyage implique de choisir une destination, 
+                de vérifier les offres de vols et d'hôtels, et de s'assurer que tous 
+                les documents de voyage sont en règle. Il est conseillé de réserver à 
+                l'avance pour bénéficier de meilleurs tarifs. Une bonne organisation 
+                vous permettra de profiter pleinement de votre aventure.
+            </p>
+            <button class="next-button" onclick="scrolltosection('page2')">Suivant</button>
+        </div>
+    </section>
+    <!-- page2 for informtion  -->
+    <section class="page" id="page2">
+        <div class="infor">
+            <h1>formtoin</h1>
+            <label for="text">name and prenom:</label>
+           <input type="text" id="input1" >
+           <label for="emai">emai:</label>
+           <input type="email"  id="input2">
+           <!-- <button class="back-button" onclick="add ()">send </button> -->
+
+            <button class="next-button"  onclick="scrolltosection('page3')">Suivant</button>
+            <button class="back-button"  onclick="scrolltosection('page1')" >back</button>
+        </div>
+    </section>
+
+
+      <!-- page3 details -->
+    <section class="page" id="page3">
+        <div class="details">
+            <h1>la gare et la date de départ</h1>
+            <label for="departure-station">care de départ :</label>
+            <select id="departure-station">
+                <option value="khouribga" id="khouribga">khouribga</option>
+                <option value="marrakech" id="marrakech">marrakech</option>
+                <option value="tanger" id="tanger">tanger</option>
+            </select>
+
+            <label for="destination-station">destination :</label>
+            <select id="destination-station">
+                <option value="paris" id="paris">paris</option>
+                <option value="toulouse" id="toulouse">toulouse</option>
+                <option value="london" id="london">london</option>
+            </select>
+
+            <label for="date">date de départ :</label>
+            <input type="date" id="departure-date">
+            <button class="back-button" onclick="add1()">send </button>
+            <button class="next-button" onclick="scrolltosection('page4')">suivant</button>
+            <button class="back-button" onclick="scrolltosection('page2')">back</button>
+        </div>
+    </section>
+    <!-- page4 searchresult -->
+
+ <section class="page" id="page4">
+     <div class="details">
+        <h1>les résultats de recherche</h1>
+        
+        <label for="select1">
+        <div class="search-result">
+            <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
+            <span>6:30</span>
+            <img src="./airplane.png" alt="Avion" width="50">
+            <span>8:45</span>
+            <input id="select1"  type="checkbox">
+        </div>
+    </label>
+        
+    
+        
+    <label for="select2">
+        <div class="search-result">
+            <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
+            <span>6:30</span>
+            <img src="./airplane.png" alt="Avion" width="50">
+            <span>8:45</span>
+            <input id="select2"  type="checkbox">
+        </div>
+    </label>
+        
+    <label for="select3">
+        <div class="search-result">
+            <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
+            <span>6:30</span>
+            <img src="./airplane.png" alt="Avion" width="50">
+            <span>8:45</span>
+            <input id="select3"  type="checkbox">
+        </div>
+    </label>
+        <div class="button-search">
+            <button class="next-button" onclick="scrolltosection('page5')">suivant</button>
+            <button class="back-button" onclick="scrolltosection('page3')">back</button>
+        </div>
+    </div>    
+</section>
+
+    
+
+
+
+    <!-- page4 vayageurs -->
+    <section class="page" id="page5">
+     <div class="details">
+                     <h1>Voyageurs</h1>
+                     <div class="ticket-container">
+                        <div class="ticket">
+                            <h4>Adult (Prix 500DH)</h4>
+                            <div class="counter">
+                                <input type="number" class="counter-btn">+</input>
+                                <span>1</span>
+                                <button class="counter-btn">-</button>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="ticket">
+                            <h4>Enfant (Prix 100DH)</h4>
+                            <div class="counter">
+                                <button class="counter-btn">+</button>
+                                <span>1</span>
+                                <button class="counter-btn">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Choisissez votre place</h4>
+                                                    <div class="seat-selection">
+                                                        <input type="checkbox"  class="seat-btn">A1</input>
+                                                        <input type="checkbox"  class="seat-btn">A2</input>
+                                                        <input type="checkbox"  class="seat-btn">A3</input>
+                                                        <input type="checkbox"  class="seat-btn">A4</input>
+                                                        <input type="checkbox"  class="seat-btn">A5</input>
+                                                        <input type="checkbox"  class="seat-btn">A6</input>
+                                                        </div>
+                                                        <div class="seat-selection">
+                                                        <input type="checkbox"  class="seat-btn">A7</input>
+                                                        <input type="checkbox"  class="seat-btn">A8</input>
+                                                        <input type="checkbox"  class="seat-btn">A9</input>
+                                                        <input type="checkbox"  class="seat-btn">B1</input>
+                                                        <input type="checkbox"  class="seat-btn">B2</input>  
+                                                        <input type="checkbox"  class="seat-btn">B3</input>
+
+                                                      
+                                                    </div>
+<h4>Prix Total : 0000DH</h4>
+<div class="tab tab-4"></div>
+
+<div class="button-search">
+    <button class="next-button" onclick="scrolltosection('page6')">suivant</button>
+    <button class="back-button" onclick="scrolltosection('page4')">back</button>
+</div>  
+</div> 
+
+    </section>
+
+
+    <script src="js.js">
+      
+    </script>
+</body>
+</html>
