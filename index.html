@@ -43,22 +43,24 @@
         <div class="details">
             <h1>la gare et la date de départ</h1>
             <label for="departure-station">care de départ :</label>
-            <select id="departure-station">
+            <select id="departurestation">
+                <option value="" >Select an option</option>
                 <option value="khouribga" id="khouribga">khouribga</option>
                 <option value="marrakech" id="marrakech">marrakech</option>
                 <option value="tanger" id="tanger">tanger</option>
             </select>
 
             <label for="destination-station">destination :</label>
-            <select id="destination-station">
+            <select id="destinationstation">
+                <option value="" >Select an option</option>
                 <option value="paris" id="paris">paris</option>
                 <option value="toulouse" id="toulouse">toulouse</option>
                 <option value="london" id="london">london</option>
             </select>
 
             <label for="date">date de départ :</label>
-            <input type="date" id="departure-date">
-            <button class="back-button" onclick="add1()">send </button>
+            <input type="date" id="departuredate">
+            
             <button class="next-button" onclick="scrolltosection('page4')">suivant</button>
             <button class="back-button" onclick="scrolltosection('page2')">back</button>
         </div>
@@ -101,6 +103,7 @@
         </div>
     </label>
         <div class="button-search">
+            <button class="back-button" onclick="add1()">send </button>
             <button class="next-button" onclick="scrolltosection('page5')">suivant</button>
             <button class="back-button" onclick="scrolltosection('page3')">back</button>
         </div>
