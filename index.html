@@ -27,13 +27,13 @@
         <div class="infor">
             <h1>formtoin</h1>
             <label for="text">name and prenom:</label>
-           <input type="text" id="input1" >
+           <input type="text" id="input1" placeholder="name" >
            <label for="emai">emai:</label>
-           <input type="email"  id="input2">
+           <input type="email"  id="input2"   placeholder="example@example.com">
            <!-- <button class="back-button" onclick="add ()">send </button> -->
 
+           <button class="back-button"  onclick="scrolltosection('page1')" >back</button>
             <button class="next-button"  onclick="scrolltosection('page3')">Suivant</button>
-            <button class="back-button"  onclick="scrolltosection('page1')" >back</button>
         </div>
     </section>
 
@@ -59,10 +59,10 @@
             </select>
 
             <label for="date">date de départ :</label>
-            <input type="date" id="departuredate">
+            <input type="date" id="departuredate" min="">
             
-            <button class="next-button" onclick="scrolltosection('page4')">suivant</button>
             <button class="back-button" onclick="scrolltosection('page2')">back</button>
+            <button class="next-button" onclick="scrolltosection('page4')">suivant</button>
         </div>
     </section>
     <!-- page4 searchresult -->
@@ -71,41 +71,41 @@
      <div class="details">
         <h1>les résultats de recherche</h1>
         
-        <label for="select1">
+        <label for="select1" class="label">
         <div class="search-result">
             <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
-            <span>6:30</span>
+            <span class="start-date1">6:30</span>
             <img src="./airplane.png" alt="Avion" width="50">
-            <span>8:45</span>
-            <input id="select1"  type="checkbox">
+            <span class="end-date1">8:45</span>
+            <input id="select1" class="inputs" name="date" type="radio">
         </div>
     </label>
         
     
         
-    <label for="select2">
+    <label for="select2" class="label">
         <div class="search-result">
             <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
-            <span>6:30</span>
+            <span class="start-date2">12:30</span>
             <img src="./airplane.png" alt="Avion" width="50">
-            <span>8:45</span>
-            <input id="select2"  type="checkbox">
+            <span class="end-date2">2:45</span>
+            <input id="select2" class="inputs" name="date" type="radio">
         </div>
     </label>
         
-    <label for="select3">
+    <label for="select3" class="label">
         <div class="search-result">
             <img src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="Logo Lufthansa" height="50">
-            <span>6:30</span>
+            <span class="start-date3">15:30</span>
             <img src="./airplane.png" alt="Avion" width="50">
-            <span>8:45</span>
-            <input id="select3"  type="checkbox">
+            <span class="end-date3">17:45</span>
+            <input id="select3"class="inputs" name="date" type="radio">
         </div>
     </label>
         <div class="button-search">
-            <button class="back-button" onclick="add1()">send </button>
-            <button class="next-button" onclick="scrolltosection('page5')">suivant</button>
+           
             <button class="back-button" onclick="scrolltosection('page3')">back</button>
+            <button class="next-button" onclick="scrolltosection('page5')">suivant</button>
         </div>
     </div>    
 </section>
@@ -116,57 +116,58 @@
 
     <!-- page4 vayageurs -->
     <section class="page" id="page5">
-     <div class="details">
-                     <h1>Voyageurs</h1>
-                     <div class="ticket-container">
-                        <div class="ticket">
-                            <h4>Adult (Prix 500DH)</h4>
-                            <div class="counter">
-                                <input type="number" class="counter-btn">+</input>
-                                <span>1</span>
-                                <button class="counter-btn">-</button>
-                            </div>
-                        </div>
-                        <div class="separator"></div>
-                        <div class="ticket">
-                            <h4>Enfant (Prix 100DH)</h4>
-                            <div class="counter">
-                                <button class="counter-btn">+</button>
-                                <span>1</span>
-                                <button class="counter-btn">-</button>
-                            </div>
-                        </div>
+        <div class="details">
+            <h1>Voyageurs</h1>
+            <div class="ticket-container">
+                <div class="ticket">
+                    <h4>Adult (Prix 500DH)</h4>
+                    <div class="counter">
+                        <button class="counter-btn" onclick="updatecount('adult', 1)">+</button>
+                        <span id="adult-count">0</span>
+                        <button class="counter-btn" onclick="updatecount('adult', -1)">-</button>
                     </div>
-                    <h4>Choisissez votre place</h4>
-                                                    <div class="seat-selection">
-                                                        <input type="checkbox"  class="seat-btn">A1</input>
-                                                        <input type="checkbox"  class="seat-btn">A2</input>
-                                                        <input type="checkbox"  class="seat-btn">A3</input>
-                                                        <input type="checkbox"  class="seat-btn">A4</input>
-                                                        <input type="checkbox"  class="seat-btn">A5</input>
-                                                        <input type="checkbox"  class="seat-btn">A6</input>
-                                                        </div>
-                                                        <div class="seat-selection">
-                                                        <input type="checkbox"  class="seat-btn">A7</input>
-                                                        <input type="checkbox"  class="seat-btn">A8</input>
-                                                        <input type="checkbox"  class="seat-btn">A9</input>
-                                                        <input type="checkbox"  class="seat-btn">B1</input>
-                                                        <input type="checkbox"  class="seat-btn">B2</input>  
-                                                        <input type="checkbox"  class="seat-btn">B3</input>
-
-                                                      
-                                                    </div>
-<h4>Prix Total : 0000DH</h4>
-<div class="tab tab-4"></div>
-
-<div class="button-search">
-    <button class="next-button" onclick="scrolltosection('page6')">suivant</button>
-    <button class="back-button" onclick="scrolltosection('page4')">back</button>
-</div>  
-</div> 
-
+                </div>
+                <div class="separator"></div>
+                <div class="ticket">
+                    <h4>Enfant (Prix 100DH)</h4>
+                    <div class="counter">
+                        <button class="counter-btn" onclick="updatecount('child', 1)">+</button>
+                        <span id="child-count">0</span>
+                        <button class="counter-btn" onclick="updatecount('child', -1)">-</button>
+                    </div>
+                </div>
+            </div>
+    
+            <h4>Choisissez votre place</h4>
+            <div class="seat-selection">
+                <input type="checkbox" class="seat-btn" data-seat="A1">A1</input>
+                <input type="checkbox" class="seat-btn" data-seat="A2">A2</input>
+                <input type="checkbox" class="seat-btn" data-seat="A3">A3</input>
+                <input type="checkbox" class="seat-btn" data-seat="A4">A4</input>
+                <input type="checkbox" class="seat-btn" data-seat="A5">A5</input>
+                <input type="checkbox" class="seat-btn" data-seat="A6">A6</input>
+            </div>
+            <div class="seat-selection">
+                <input type="checkbox" class="seat-btn" data-seat="A7">A7</input>
+                <input type="checkbox" class="seat-btn" data-seat="A8">A8</input>
+                <input type="checkbox" class="seat-btn" data-seat="A9">A9</input>
+                <input type="checkbox" class="seat-btn" data-seat="B1">B1</input>
+                <input type="checkbox" class="seat-btn" data-seat="B2">B2</input>
+                <input type="checkbox" class="seat-btn" data-seat="B3">B3</input>
+            </div>
+    
+            <h4>Prix Total : <span id="total-price">0000DH</span></h4>
+    
+            <div class="tab tab-4"></div>
+    
+            <div class="button-search">
+                <button class="back-button" onclick="scrolltosection('page4')">Back</button>
+                <button class="next-button" onclick="scrolltosection('page6')">Suivant</button>
+            </div>
+        </div>
     </section>
-
+    
+ 
 
     <script src="js.js">
       

@@ -89,8 +89,19 @@ select, input[type="date"] {
     transition: background-color 0.3s ease;
 }
 
-.next-button:hover {
+.next-button:hover , .counter-btn{
     background-color: #558ca6;
+
+
+}
+
+.counter-btn{
+    padding: 20px;
+    background-color: #70afd0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 90%;
+
 }
 
 
@@ -150,6 +161,7 @@ h4 {
     border-radius: 5px;
     background-color: #ffffff;
     transition: border-color 0.3s ease;
+   
 }
 
 #page2 input[type="text"]:focus, #page2 input[type="email"]:focus {
