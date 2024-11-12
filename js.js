@@ -114,6 +114,7 @@ let childcount = 0;
 
 function updatecount(type, change) {
   checkbox();
+  
     if (type === 'adult') {
         adultcount = Math.max(0, adultcount + change); 
         document.getElementById('adult-count').innerText = adultcount;
@@ -129,9 +130,81 @@ let placeNum=0;
 function totalprice(){
 
   const totalprice = (adultcount * adultPrice) + (childcount * childPrice) 
-placeNum=adultcount+childcount;
-
+  placeNum=adultcount+childcount;  
+  
   document.getElementById('total-price').innerText = totalprice +'dh';
+  
+  
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+let countChecked=0
+let inputCheck=document.querySelectorAll('input[type="checkbox"]');
+for(let i=0;i<inputCheck.length;i++){
+  inputCheck[i].setAttribute('disabled',true);
+  if(inputCheck[i].checked){
+    countChecked++;
+    console.log(countChecked)
+  }
+}
+
+
+
+
+
+function checkbox(){
+
+
+  let countChecked = 0;
+
+
+
+
+
+
+
+
+
+
+  
+inputCheck.forEach(checkbox=>{
+  checkbox.removeAttribute("disabled");
+  checkbox.addEventListener('change',()=>{
+    for(let i=0;i<inputCheck.length;i++){
+      if(inputCheck[i].checked){
+        countChecked++;
+        console.log(countChecked)
+      }
+     
+    }
+
+    inputCheck.forEach(checkbox=>{
+      if(placeNum>countChecked){
+        checkbox.removeAttribute('disabled');
+      }else if(!checkbox.checked){
+        checkbox.setAttribute('disabled',true);
+      }
+  })
+})
+})
+
+
+
+
+
+
+
 
 
 }
@@ -139,39 +212,149 @@ placeNum=adultcount+childcount;
 
 
 
-let countChecked = 0;
-let inputCheck = document.querySelectorAll('input[type="checkbox"]');
-// let placeNum = 3; 
+// document.getElementById("generatePDF").addEventListener("click", () => {
+  
+//   const tickets = document.querySelectorAll('.ticket-item');
 
-inputCheck.forEach(input => {
-  input.setAttribute('disabled', true);
-  if (input.checked) {
-    countChecked++;
-  }
+//   tickets.forEach((ticket, index) => {
+//     const clonedTicket = ticket.cloneNode(true); 
+
+//     // إعداد إعدادات PDF
+//     const options = {
+//       margin: 10,
+//       filename: `Flight_Ticket_${index + 1}.pdf`,
+//       image: { type: 'jpeg', quality: 0.98 },
+//       html2canvas: { scale: 2 },
+//       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+//     };
+
+//     // إنشاء ملف PDF من العنصر المستنسخ
+//     html2pdf().set(options).from(clonedTicket).save();
+//   });
+// });
+
+
+
+
+document.getElementById("generatePDF").addEventListener("click", () => {
+  const ticketSection = document.getElementById("ticket");
+
+  const options = {
+    margin: 10,
+    filename: 'Flight_Tickets.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  const children = ticketSection.children;
+
+  
+  Array.from(children).forEach((ch, index) => {
+    
+    if(index < Array.from(children).length -1)
+       ch.style.pageBreakAfter = 'always'; 
+  });
+
+  
+  html2pdf().set(options).from(ticketSection).save();
 });
 
-function checkbox() {
-  inputCheck.forEach(checkbox => {
-    checkbox.removeAttribute('disabled');
-    checkbox.addEventListener('change', () => {
-    
-      countChecked = 0;
-      inputCheck.forEach(input => {
-        if (input.checked) {
-          countChecked++;
-        }
-      });
 
-     
-      inputCheck.forEach(input => {
-        if (countChecked < placeNum) {
-          input.removeAttribute('disabled');
-        } else if (!input.checked) {
-          input.setAttribute('disabled', true);
-        }
-      });
-    });
-  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// parti tikcet
+
+function addticket() {
+  totalprice(); 
+
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const departurestation = document.getElementById("departurestation").value;
+  const destinationstation = document.getElementById("destinationstation").value;
+  const departuredate = document.getElementById("departuredate").value;
+
+
+  const startdate1 = document.querySelector('label[for="select1"] .start-date1')?.innerText;
+  const enddate1 = document.querySelector('label[for="select1"] .end-date1')?.innerText;
+  
+  const startdate2 = document.querySelector('label[for="select2"] .start-date2')?.innerText;
+  const enddate2 = document.querySelector('label[for="select2"] .end-date2')?.innerText;
+  
+  const startdate3 = document.querySelector('label[for="select3"] .start-date3')?.innerText;
+  const enddate3 = document.querySelector('label[for="select3"] .end-date3')?.innerText;
+
+ 
+
+  console.log(startdate1, enddate1, startdate2, enddate2, startdate3, enddate3);
+
+  const selectedoption = document.querySelector('input[name="date"]:checked');
+
+  if (selectedoption) {
+    const selectedId = selectedoption.id;
+
+    let selectedstart, selectedend;
+
+    if (selectedId === "select1") {
+      selectedstart = startdate1;
+      selectedend = enddate1;
+    } else if (selectedId === "select2") {
+      selectedstart = startdate2;
+      selectedend = enddate2;
+    } else if (selectedId === "select3") {
+      selectedstart = startdate3;
+      selectedend = enddate3;
+    }
+
+  
+    const ticketsList = document.getElementById('ticket');
+  
+    for (let i = 0; i < placeNum; i++) {
+      ticketsList.innerHTML += `
+        <div>
+          <p>Name: ${input1}</p>
+          <p>Email: ${input2}</p>
+          <p>Arrival: ${departurestation}</p>
+          <p>Destination: ${destinationstation}</p>
+          <p>Date of Departure: ${departuredate}</p>
+          <p>Start Date: ${selectedstart}</p>
+          <p>End Date: ${selectedend}</p>
+          <p>Total Price: ${adultcount * adultPrice + childcount * childPrice} dh</p>
+          <hr>
+        </div>
+      `;
+    }
+  } 
 }
 
 
@@ -187,38 +370,25 @@ function checkbox() {
 
 
 
-// let countChecked=0
-// let inputCheck=document.querySelectorAll('input[type="checkbox"]');
-// for(let i=0;i<inputCheck.length;i++){
-//   inputCheck[i].setAttribute('disabled',true);
-//   if(inputCheck[i].checked){
-//     countChecked++;
-//   }
-// }
 
-// function checkbox(){
-  
-// inputCheck.forEach(checkbox=>{
-//   checkbox.removeAttribute("disabled");
-//   checkbox.addEventListener('change',()=>{
-//     for(let i=0;i<inputCheck.length;i++){
-//       if(inputCheck[i].checked){
-//         countChecked++;
-//       }
-//     }
-//     inputCheck.forEach(checkbox=>{
-//       if(placeNum>countChecked){
-//         checkbox.removeAttribute('disabled');
-//       }else if(!checkbox.checked){
-//         checkbox.setAttribute('disabled',true);
-//       }
-//   })
-// })
-// })
 
-    
-  
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

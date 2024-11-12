@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservation</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+
+
 </head>
 <body>
     <!-- page1 intrudction -->
@@ -161,16 +165,24 @@
             <div class="tab tab-4"></div>
     
             <div class="button-search">
-                <button class="back-button" onclick="scrolltosection('page4')">Back</button>
-                <button class="next-button" onclick="scrolltosection('page6')">Suivant</button>
+                <button class="back-button" onclick="scrolltosection('page4')" >Back</button>
+                <button class="next-button" onclick="scrolltosection('page6')" id="nest">Suivant</button>
+                <button class="next-button" onclick="addticket()" id="nest">print</button>
             </div>
         </div>
     </section>
     
+
+    <!-- page6 -->
+    <section class="page" id="page6">
+        <div class="intro"class="ticket-item" id="ticket">
+            
+        </div>
+        <button id="generatePDF" type="button">Generate PDF</button>
+    </section>
  
 
-    <script src="js.js">
-      
-    </script>
+    <script src="js.js"></script>
+
 </body>
 </html>

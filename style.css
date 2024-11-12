@@ -168,3 +168,43 @@ h4 {
     border-color: #2e6c8e;
     outline: none;
 }
+
+
+
+/* parti ticket  */
+
+
+
+#ticket div {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #ticket p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #ticket hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+ #page6{
+    margin-top: 100px;
+
+
+
+ }
+  
+  
+
+
+
+
