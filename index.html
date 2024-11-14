@@ -139,19 +139,17 @@
                         <span id="child-count">0</span>
                         <button class="counter-btn" onclick="updatecount('child', -1)">-</button>
                     </div>
-                </div>
+                </div>  
             </div>
-    
             <h4>Choisissez votre place</h4>
             <div class="seat-selection">
-                <input type="checkbox" class="seat-btn" data-seat="A1">A1</input>
+                <input type="checkbox" class="seat-btn" disabled="true" data-seat="A1">A1</input>
                 <input type="checkbox" class="seat-btn" data-seat="A2">A2</input>
                 <input type="checkbox" class="seat-btn" data-seat="A3">A3</input>
                 <input type="checkbox" class="seat-btn" data-seat="A4">A4</input>
                 <input type="checkbox" class="seat-btn" data-seat="A5">A5</input>
                 <input type="checkbox" class="seat-btn" data-seat="A6">A6</input>
-            </div>
-            <div class="seat-selection">
+            <br>
                 <input type="checkbox" class="seat-btn" data-seat="A7">A7</input>
                 <input type="checkbox" class="seat-btn" data-seat="A8">A8</input>
                 <input type="checkbox" class="seat-btn" data-seat="A9">A9</input>
@@ -166,8 +164,8 @@
     
             <div class="button-search">
                 <button class="back-button" onclick="scrolltosection('page4')" >Back</button>
-                <button class="next-button" onclick="scrolltosection('page6')" id="nest">Suivant</button>
-                <button class="next-button" onclick="addticket()" id="nest">print</button>
+                <button class="next-button" onclick="scrolltosection('page6')" >Suivant</button>
+               
             </div>
         </div>
     </section>
@@ -176,9 +174,10 @@
     <!-- page6 -->
     <section class="page" id="page6">
         <div class="intro"class="ticket-item" id="ticket">
-            
+            <div id="qrTest"></div>  
         </div>
-        <button id="generatePDF" type="button">Generate PDF</button>
+        
+        <button id="generatePDF" type="button">downolad PDF</button>
     </section>
  
 

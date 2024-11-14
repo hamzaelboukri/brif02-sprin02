@@ -172,39 +172,71 @@ h4 {
 
 
 /* parti ticket  */
-
-
-
-#ticket div {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 15px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.ticket-item {
+    
+    background: #f9f9f9;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
   }
   
-  #ticket p {
+  .ticket-item::before,
+  .ticket-item::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .ticket-item::before {
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ticket-item::after {
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ticket-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .ticket-item p {
     margin: 5px 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
   }
   
-  #ticket hr {
+  #generatePDF {
+    background: #ff6f61;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-top: 1px solid #ddd;
-    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
   }
   
- #page6{
-    margin-top: 100px;
+  #generatePDF:hover {
+    background: #e55a50;
+  }
+#page6{
 
-
-
- }
-  
-  
-
-
-
-
+    
+        page-break-before: always;
+      
+}  

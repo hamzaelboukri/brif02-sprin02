@@ -170,3 +170,105 @@
 //     `;
 //   }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // parti tikcet
+// function addticket() {
+//   totalprice();
+
+//   const input1 = document.getElementById("input1").value;
+//   const input2 = document.getElementById("input2").value;
+//   const departurestation = document.getElementById("departurestation").value;
+//   const destinationstation = document.getElementById("destinationstation").value;
+//   const departuredate = document.getElementById("departuredate").value;
+
+//   const startdate1 = document.querySelector('label[for="select1"] .start-date1')?.innerText;
+//   const enddate1 = document.querySelector('label[for="select1"] .end-date1')?.innerText;
+//   const startdate2 = document.querySelector('label[for="select2"] .start-date2')?.innerText;
+//   const enddate2 = document.querySelector('label[for="select2"] .end-date2')?.innerText;
+//   const startdate3 = document.querySelector('label[for="select3"] .start-date3')?.innerText;
+//   const enddate3 = document.querySelector('label[for="select3"] .end-date3')?.innerText;
+
+//   const selectedoption = document.querySelector('input[name="date"]:checked');
+
+//   if (selectedoption) {
+//     const selectedId = selectedoption.id;
+//     let selectedstart, selectedend;
+
+//     if (selectedId === "select1") {
+//       selectedstart = startdate1;
+//       selectedend = enddate1;
+//     } else if (selectedId === "select2") {
+//       selectedstart = startdate2;
+//       selectedend = enddate2;
+//     } else if (selectedId === "select3") {
+//       selectedstart = startdate3;
+//       selectedend = enddate3;
+//     }
+
+//     const ticketsList = document.getElementById('ticket');
+//     ticketsList.innerHTML = '';
+
+//     for (let i = 0; i < placeNum; i++) {
+//       const qrData = `Name: ${input1}, Email: ${input2}, Departure: ${departurestation}, Destination: ${destinationstation}, Departure Date: ${departuredate}, Start Date: ${selectedstart}, End Date: ${selectedend}, Price: ${adultcount * adultPrice + childcount * childPrice} dh`;
+
+//       const ticketContent = `
+//         <div class="ticket-item">
+//           <p>Name: ${input1}</p>
+//           <p>Email: ${input2}</p>
+//           <p>Arrival: ${departurestation}</p>
+//           <p>Destination: ${destinationstation}</p>
+//           <p>Date of Departure: ${departuredate}</p>
+//           <p>Start Date: ${selectedstart}</p>
+//           <p>End Date: ${selectedend}</p>
+//           <p>Total Price: ${adultcount * adultPrice + childcount * childPrice} dh</p>
+//           <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrData)}" alt="QR Code">
+//           <hr>
+//         </div>
+//       `;
+
+//       ticketsList.innerHTML += ticketContent;
+//     }
+//   }
+// }
